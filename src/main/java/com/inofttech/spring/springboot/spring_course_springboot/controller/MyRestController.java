@@ -1,6 +1,7 @@
 package com.inofttech.spring.springboot.spring_course_springboot.controller;
 
 import com.inofttech.spring.springboot.spring_course_springboot.entity.Employee;
+import com.inofttech.spring.springboot.spring_course_springboot.exception_handling.NoSuchEmployeeException;
 import com.inofttech.spring.springboot.spring_course_springboot.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class MyRestController {
         return allEmployees;
     }
 
-    /*@GetMapping("/employees/{id}")
+    @GetMapping("/employees/{id}")
     public Employee getEmployee(@PathVariable int id) {
         Employee employee = employeeService.getEmployeeById(id);
 
@@ -29,7 +30,7 @@ public class MyRestController {
                     + " in database");
         }
         return employee;
-    }*/
+    }
 
     @PostMapping("/employees")
     public Employee addNewEmployee(@RequestBody Employee employee) {
@@ -44,7 +45,7 @@ public class MyRestController {
         return employee;
     }
 
-   /* @DeleteMapping("/employees/{id}")
+   @DeleteMapping("/employees/{id}")
     public String deleteEmployee(@PathVariable int id) {
         Employee employee = employeeService.getEmployeeById(id);
         if(employee==null) {
@@ -52,6 +53,6 @@ public class MyRestController {
         }
         employeeService.deleteEmployeeById(id);
         return "Employee with ID= " + id + " was deleted";
-    }*/
+    }
 
 }

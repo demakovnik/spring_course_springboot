@@ -29,25 +29,24 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         Session session = entityManager.unwrap(Session.class);
         session.saveOrUpdate(employee);
     }
-/*
     @Override
     public Employee getEmployeeById(int id) {
-        Session session = sessionFactory.getCurrentSession();
+        Session session = entityManager.unwrap(Session.class);
         return session.get(Employee.class, id);
     }
 
     @Override
     public void updateEmployee(Employee employee) {
-        Session session = sessionFactory.getCurrentSession();
+        Session session = entityManager.unwrap(Session.class);
         session.update(employee);
     }
 
     @Override
     public void deleteEmployeeById(int id) {
-        Session session = sessionFactory.getCurrentSession();
+        Session session = entityManager.unwrap(Session.class);
         Query query = session.createQuery("delete from Employee where id=:employeeId");
         query.setParameter("employeeId", id);
         query.executeUpdate();
 
-    }*/
+    }
 }

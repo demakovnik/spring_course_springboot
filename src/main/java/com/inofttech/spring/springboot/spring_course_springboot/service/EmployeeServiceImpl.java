@@ -28,7 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         employeeDAO.saveEmployee(employee);
     }
 
-    /*@Override
+    @Override
     @Transactional
     public Employee getEmployeeById(int id) {
         return employeeDAO.getEmployeeById(id);
@@ -39,6 +39,6 @@ public class EmployeeServiceImpl implements EmployeeService{
     public void deleteEmployeeById(int id) {
         employeeDAO.deleteEmployeeById(id);
 
-    }*/
+    }
 
 }
